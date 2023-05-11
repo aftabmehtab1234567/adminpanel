@@ -25,8 +25,8 @@
                 <h4 class="text-center ">CRUD OPERATIONS</h4>
                 <div class="user-img mt-4">
                <?php $db = mysqli_connect("localhost", "root", "", "child");
-             
-             $sql1="SELECT * FROM `userprofile`";
+             $mail=$_SESSION['email'];
+             $sql1="SELECT * FROM `userprofile`WHERE email='$mail'";
              $res=mysqli_query($db, $sql1);
              $row=mysqli_fetch_assoc($res);
             
