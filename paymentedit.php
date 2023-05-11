@@ -1,7 +1,7 @@
 <!-- php connectivity-->
 
 <?php
-$conn=mysqli_connect("localhost","root","","student");
+$conn=mysqli_connect("localhost","root","","child");
 
 ?>
 <!--using supper global variable-->

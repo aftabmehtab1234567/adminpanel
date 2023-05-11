@@ -11,7 +11,7 @@
 
 <?php
 
-$conn = mysqli_connect('localhost','root','','student');
+$conn = mysqli_connect('localhost','root','','child');
 
 if(isset($_POST['submit'])){
  $email=$_POST['email'];

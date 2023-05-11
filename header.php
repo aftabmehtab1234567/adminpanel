@@ -24,17 +24,17 @@
                 <span class="line-dashboard"></span>
                 <h4 class="text-center ">CRUD OPERATIONS</h4>
                 <div class="user-img mt-4">
-               <?php $db = mysqli_connect("localhost", "root", "", "student");
-               $sql1="SELECT * FROM `userprofile`";
-               $es1=mysqli_query($db,$sql1);
+               <?php $db = mysqli_connect("localhost", "root", "", "child");
+             
+             $sql1="SELECT * FROM `userprofile`";
+             $res=mysqli_query($db, $sql1);
+             $row=mysqli_fetch_assoc($res);
             
-               $row=mysqli_fetch_assoc($es1);
                ?>
-               
-                    <img src="<?php echo "image/".$row['image']?>" alt="">
+                    
                   
-                    <h5 class="text-center mt-4"><?php echo $row['name']?></h5>
-                    <p class="text-center mt-4" style="color:#FEAF00">Admin</p>
+                    <h5 class="text-center mt-4"><img src="<?php echo "image/".$row['image']?>"></h5>
+                    <p class="text-center mt-4" style="color:#FEAF00"><?php echo  $_SESSION['email']?></p>
                 </div>
                 <nav>
                     <div class="navbar">

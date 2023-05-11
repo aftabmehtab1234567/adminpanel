@@ -3,7 +3,7 @@
 
 <!-- php connectivity-->
 <?php
-$conn=mysqli_connect("localhost","root","","student");
+$conn=mysqli_connect("localhost","root","","child");
 ?>
 
 
@@ -33,8 +33,8 @@ $res=mysqli_query($conn, $sql1);
  while ($row = mysqli_fetch_assoc($res)) { ?>
  <?php include ("header.php")?>
  <!--foem open-->
- <div class=col-lg-10>
- <form method="post" action="">
+  <div class=col-lg-10>
+  <form method="post" action="">
   <div class="row">
     <div class="col">
       <input type="text" class="form-control mt-5" placeholder="Name" name="name" value="<?php echo $row['Name'] ?>">
@@ -58,7 +58,7 @@ $res=mysqli_query($conn, $sql1);
       <input type="date" class="form-control mt-5" placeholder="Date_admisssion"name="date" value="<?php echo $row['Date_admission'] ?>">
     </div>
 </form>
-<?php }?>
+<?php }?> 
 <!--submit button-->
 <button type="submit" name="update" class="btn btn-warning  btn-md mt-5  col-3">Update</button>
 </form>

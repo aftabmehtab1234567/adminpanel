@@ -34,7 +34,7 @@ if(isset($_SESSION['email'])){
                             <!--counting numbers of rows-->
                             <?php  
                             
-                            $conn=mysqli_connect("localhost","root","","student");
+                            $conn=mysqli_connect("localhost","root","","child");
                             $sql1="SELECT * FROM `registration`";
                             $res=mysqli_query($conn, $sql1);
                             $row=mysqli_num_rows($res);
@@ -49,7 +49,7 @@ if(isset($_SESSION['email'])){
                             <p>Course</p>
                              <!--counting numbers of rows-->
                             <?php  
-                            $conn=mysqli_connect("localhost","root","","student");
+                            $conn=mysqli_connect("localhost","root","","child");
                             $sql1="SELECT * FROM `course2`";
                             $res=mysqli_query($conn, $sql1);
                             $row=mysqli_num_rows($res);
@@ -62,7 +62,7 @@ if(isset($_SESSION['email'])){
                             <span class=" fa fa-rupee-sign"></span>
                             <p>Payment</p>
                             <?php  
-                            $conn=mysqli_connect("localhost","root","","student");
+                            $conn=mysqli_connect("localhost","root","","child");
                             $sql1="SELECT SUM(amountpaid) FROM `payment`";
                             $res=mysqli_query($conn, $sql1);
                             while($row=mysqli_fetch_array($res)){
@@ -76,7 +76,7 @@ if(isset($_SESSION['email'])){
                             <span class=" fa fa-user"></span>
                             <p>User</p>
                             <?php  
-                            $conn=mysqli_connect("localhost","root","","student");
+                            $conn=mysqli_connect("localhost","root","","child");
                             $sql1="SELECT * FROM `login`";
                             $res=mysqli_query($conn, $sql1);
                             $row=mysqli_num_rows($res);
