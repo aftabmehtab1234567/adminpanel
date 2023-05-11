@@ -196,15 +196,24 @@ if (isset($_POST['save'])) {
        
  }
  ?>
- <?php 
+ <?php
+if (isset($_POST['edit'])) {
+  
+  $name=$_POST["name"];
+  $dob=$_POST["dob"];
+  $phone=$_POST["phone"];
+  $email=$_POST["email"];
+  $gender=$_POST["gender"];
+  $filename = $_FILES["file"]["name"];
+  $tempname = $_FILES["file"]["tmp_name"];
+  $folder = "./image/" . $filename;
 
-$sql1= "SELECT `email` FROM `userprofile` WHERE name = Aftab";
-
-$res=mysqli_query($db,$sql1);
-$row=mysqli_fetch_assoc($res);
- ?>
-
-
+    $db = mysqli_connect("localhost", "root", "", "child");
+    $mail=$_SESSION['email'];
+    $sql="UPDATE `userprofile` SET `name`='$name',`dob`='$dob',`phone`='$phone',`email`='$email',`gender`='$gender',`image`='$filename' WHERE email='$mail'";
+    $res=mysqli_query($db,$sql);
+}
+?>
 
 
 
