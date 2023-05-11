@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2023 at 12:14 PM
+-- Generation Time: May 11, 2023 at 07:59 AM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.1.17
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `students`
+-- Database: `child`
 --
 
 -- --------------------------------------------------------
@@ -75,7 +75,9 @@ INSERT INTO `login` (`id`, `email`, `password`) VALUES
 (22, 'raju@gmail.com', '12345'),
 (23, 'aftab@gmail.com', '123456'),
 (25, 'usha@gmail.com', '123456'),
-(26, 'vaibhav@gmail.com', '8569');
+(26, 'vaibhav@gmail.com', '8569'),
+(36, 'Male', ''),
+(37, 'Vaibhav@gmail.com', '');
 
 -- --------------------------------------------------------
 
@@ -98,8 +100,8 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`id`, `name`, `paymentsche`, `bill_number`, `amountpaid`, `balanceamount`, `date`) VALUES
-(9, 'busha singh', 'first', 87877956, '20000', '400', '2023-05-09'),
-(11, 'shivang', 'first', 788878878, '400', '10', '2023-05-10'),
+(9, 'usha singh', 'first', 87877956, '20000', '400', '2023-05-09'),
+(11, 'shivang', 'first', 788878878, '400', '20', '2023-05-10'),
 (12, 'aftab alam', 'first', 884564, '6000', '88977', '2023-05-15');
 
 -- --------------------------------------------------------
@@ -126,6 +128,30 @@ INSERT INTO `registration` (`serial_no`, `Name`, `Email`, `phone`, `Enroll_numbe
 (169, 'urmila maurya', 'urmila@gmail.com', 8785464, 2147483647, '2023-05-19'),
 (173, 'aftab alam', 'aftab@gmail.com', 787884564, 2147483647, '2023-05-18'),
 (174, 'vikas', 'vikas@gmail.com', 2147483647, 745896, '2023-05-10');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userprofile`
+--
+
+CREATE TABLE `userprofile` (
+  `id` int(100) NOT NULL,
+  `name` varchar(200) DEFAULT NULL,
+  `dob` varchar(200) DEFAULT NULL,
+  `phone` int(200) DEFAULT NULL,
+  `email` varchar(200) DEFAULT NULL,
+  `gender` varchar(200) DEFAULT NULL,
+  `image` varchar(300) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `userprofile`
+--
+
+INSERT INTO `userprofile` (`id`, `name`, `dob`, `phone`, `email`, `gender`, `image`) VALUES
+(12, 'Aftab', '2023-05-24', 97878454, 'aftab@gmail.com', 'Male', 'images.jpg'),
+(13, 'Vaibhav', '2023-05-16', 2147483647, 'Vaibhav@gmail.com', 'Male', 'images2.jpg');
 
 --
 -- Indexes for dumped tables
@@ -162,6 +188,12 @@ ALTER TABLE `registration`
   ADD PRIMARY KEY (`serial_no`);
 
 --
+-- Indexes for table `userprofile`
+--
+ALTER TABLE `userprofile`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -175,7 +207,7 @@ ALTER TABLE `course2`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `payment`
@@ -188,6 +220,12 @@ ALTER TABLE `payment`
 --
 ALTER TABLE `registration`
   MODIFY `serial_no` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=175;
+
+--
+-- AUTO_INCREMENT for table `userprofile`
+--
+ALTER TABLE `userprofile`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
