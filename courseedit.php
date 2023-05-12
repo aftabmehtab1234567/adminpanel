@@ -1,4 +1,12 @@
+
 <?php
+/*session for fixing page*/
+session_start();
+if (isset($_SESSION['email'])) {
+} else {
+    header('location:signin.php');
+}
+?><?php
 $conn=mysqli_connect("localhost","root","","child");
 ?>
 
