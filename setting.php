@@ -8,13 +8,13 @@ if (isset($_SESSION['email'])) {
 ?>
 
 
-<?php include("header.php") ?>
+ <?php include("header.php") ?> 
 
-<div class="container-fluid col-10 border">
+ <div class="container-fluid col-10 border">
     <button type="button" class="btn btn-warning float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New User</button>
     <div class="container col-10 mt-5">
  
-    <?php //include("form.php")// ?>
+    <?php//include("form.php")// ?>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -25,7 +25,7 @@ if (isset($_SESSION['email'])) {
                 </div>
                 
                 
-<!-- modal body -->
+<!--modal body -->
 
   <div class="modal-body">
 
@@ -53,7 +53,7 @@ if (isset($_SESSION['email'])) {
 </div>
 
 </div>
-<!-- fetch data with session -->
+<!-- fetch data with session
 <?php 
 $mail=$_SESSION['email'];
 $sql1= "SELECT * FROM `userprofile` WHERE email='$mail'";
@@ -86,7 +86,7 @@ $row=mysqli_fetch_assoc($res);
       <input type="email" class="form-control mt-5" placeholder="Email"name="email" value="<?php echo $row['email']?>">
     </div>
     <div class="col">
-    <!-- select  -->
+     select  
     <input type="text" class="form-control mt-5" placeholder="Gender"name="gender" value="<?php echo $row['gender']?>">
     <select class="form-select mt-5" aria-label="Default select example" name="gender">
     <option>Gender</option>
@@ -140,9 +140,9 @@ else{
          }   
     
     }
-?>
-<?php 
-                // alert//
+// ?>
+// <?php 
+//                 // alert//
 if($showAlert){
     echo '<div class="alert alert-success" role="alert" >
     success
@@ -164,8 +164,8 @@ if($showAlert1){
 Password is not match matched
 </div>';
 }
-?>
-<?php
+// ?>
+// <?php
 // error_reporting(0);
  
 $msg = "";

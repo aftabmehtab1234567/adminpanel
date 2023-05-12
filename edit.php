@@ -33,12 +33,13 @@ header("Location:student.php");
 }
 /*fetch id*/
 ?>
-<?php
+
+ <?php include ("header.php")?>
+ <?php
   $sig=$_GET['id'];
 $sql1="SELECT * FROM `registration` WHERE serial_no={$sig}" ;
 $res=mysqli_query($conn, $sql1);
  while ($row = mysqli_fetch_assoc($res)) { ?>
- <?php include ("header.php")?>
  <!--foem open-->
   <div class=col-lg-10>
   <form method="post" action="">

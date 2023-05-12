@@ -34,12 +34,13 @@ header("Location:payment.php");
 }
 /*fetch id*/
 ?>
+<?php include ("header.php")?>
 <?php
  
 $sql1="SELECT * FROM `payment` WHERE id='".$_GET['id']."'";
 $res1=mysqli_query($conn, $sql1);
  while ($row = mysqli_fetch_assoc($res1)) { ?>
- <?php include ("header.php")?>
+ 
  <!--foem open-->
  <div class=col-lg-10>
  <form method="post" action="">
@@ -67,7 +68,7 @@ $res1=mysqli_query($conn, $sql1);
     
   <div class="row">
     <div class="col-6">
-      <input type="date" class="form-control mt-5" placeholder="Date"name="date" value="<?php echo $row['date']?>">
+      <input type="date" class="form-control mt-5" placeholder="Date"name="date" value="<?php echo $row['date'] ?>">
     </div>
 </form>
 <?php }?>
