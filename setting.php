@@ -53,7 +53,7 @@ if (isset($_SESSION['email'])) {
 </div>
 
 </div>
-<!-- fetch data with session
+<!-- fetch data with session-->
 <?php 
 $mail=$_SESSION['email'];
 $sql1= "SELECT * FROM `userprofile` WHERE email='$mail'";
@@ -86,14 +86,20 @@ $row=mysqli_fetch_assoc($res);
       <input type="email" class="form-control mt-5" placeholder="Email"name="email" value="<?php echo $row['email']?>">
     </div>
     <div class="col">
-     select  
+     <select> 
+     <div class="row">
+     <div class="col">
     <input type="text" class="form-control mt-5" placeholder="Gender"name="gender" value="<?php echo $row['gender']?>">
+</div>
+<div class="col">
     <select class="form-select mt-5" aria-label="Default select example" name="gender">
     <option>Gender</option>
   <option value="Male">Male</option>
   <option value="Female">Female</option>
   <option value="Others">Others</option>
 </select>
+
+</div>
 </div>
 <div class="row">
 <button type="submit" class="btn btn-warning mt-5 col-3  l" name="edit">Edit</button>
