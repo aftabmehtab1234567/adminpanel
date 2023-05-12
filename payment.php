@@ -14,10 +14,27 @@ if(isset($_SESSION['email'])){
             <div class="container-fluid">
                 <!-- <a class="navbar-brand">Navbar</a> -->
                 <a href="http://"><i class="fa fa-play-circle fs-3"></i></a>
+                <?php
+                if(isset($_POST['bell'])){
+                    $str=mysqli_real_escape_string($conn,$_POST['str']);
+                    $sql="SELECT * FROM `payment` WHERE  name like '%$str%' or details be like '%$str%'";
+                    $res=mysqli_query($conn, $sql);
+                    if(mysqli_num_rows($res)>0){
+                        while($row=mysqli_fetch_assoc($res)){
+                            echo $row['name'];
+                            echo "</br>";
+                             }     }
+                    else{
+                            echo "no data found";
+                        }
+                    }
+
+                
+                ?>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-                    <span class="fa fa-bell mt-2 ps-3"></span>
+                    <span class="fa fa-bell mt-2 ps-3" name="bell"></span>
                 </form>
             </div>
         </nav>
